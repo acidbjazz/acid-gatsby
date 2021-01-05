@@ -1,0 +1,17 @@
+.main {
+  flex-grow: 1;
+}
+
+.main-content {
+  margin: 0 auto var(--gap4);
+  max-width: var(--page-width);
+  padding: 0 var(--gap2);
+}
+
+/* responsive */
+
+@media (max-width: 900px) {
+  .main {
+    margin-top: var(--menu-height);
+  }
+}

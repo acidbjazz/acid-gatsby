@@ -1,0 +1,41 @@
+.modal {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: var(--z--modal);
+  box-shadow: var(--shadow);
+  background: white;
+}
+
+.modal-open {
+  composes: modal;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  width: 592px;
+}
+
+.modal-close {
+  composes: modal;
+  border-radius: 50%;
+}
+
+.btn-open {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.btn-close {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+}

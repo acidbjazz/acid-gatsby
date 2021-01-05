@@ -1,7 +1,14 @@
-/**
- * Implement Gatsby's SSR (Server Side Rendering) APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/ssr-apis/
- */
+import React from "react"
+import { Provider } from "./src/utils/Context"
+import Wrap from "./src/utils/Wrap"
+import "./src/utils/Vars.css"
+import "./src/utils/Normalizer.css"
+import "./src/utils/Bootstrap.css"
 
-// You can delete this file if you're not using it
+export const wrapRootElement = ({ element }) => {
+  return <Provider>{element}</Provider>
+}
+
+export const wrapPageElement = ({ element, props }) => {
+  return <Wrap {...props}>{element}</Wrap>
+}

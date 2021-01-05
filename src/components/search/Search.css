@@ -1,0 +1,26 @@
+.gender .search {
+  --search--color: white;
+}
+
+.search {
+  --search--color: black;
+}
+
+.search-control {
+  border-bottom: 2px solid var(--search--color);
+}
+
+.search-control .search-icon {
+  font-size: 14px;
+  color: var(--search--color);
+}
+
+input.search-input {
+  font-size: 13px;
+  font-style: italic;
+  color: var(--search--color);
+}
+
+input.search-input::placeholder {
+  color: var(--search--color);
+}

@@ -1,0 +1,21 @@
+.hero {
+  width: 100%;
+  height: var(--hero-height);
+  background: var(--color-primary);
+  color: white;
+  position: relative;
+  z-index: var(--z--hero);
+}
+
+.hero-video {
+  position: absolute;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  filter: opacity(0.5);
+}
+
+/* responsive */
+
+@media (max-width: 900px) {
+}

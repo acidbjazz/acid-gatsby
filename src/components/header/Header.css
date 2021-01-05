@@ -1,0 +1,30 @@
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--color-primary);
+  margin: var(--gap2) auto;
+  max-width: var(--page-width);
+  padding: 0 var(--gap2);
+}
+
+/* responsive */
+
+@media (max-width: 900px) {
+  .header {
+    position: fixed;
+    width: 100%;
+    z-index: var(--z--header);
+  }
+
+  .header-content {
+    background: white;
+    margin: 0;
+    padding: 0 var(--gap);
+    height: var(--menu-height);
+  }
+
+  .menu-is-open.header {
+    height: 100vh;
+  }
+}

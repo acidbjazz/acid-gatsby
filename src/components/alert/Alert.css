@@ -1,0 +1,31 @@
+.alert {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--gap);
+  background: var(--color-primary);
+  color: white;
+  font-size: var(--font-size--tiny);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--z--alert);
+}
+
+.btn-close {
+  position: absolute;
+  right: 1rem;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: white;
+}
+
+.btn-close .material-icons {
+  font-size: 14px;
+}

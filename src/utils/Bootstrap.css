@@ -1,0 +1,37 @@
+.adjust {
+  width: 100%;
+}
+
+.tight {
+  max-width: var(--page-width);
+  margin: 0 auto;
+}
+
+.container {
+  padding: var(--gap);
+}
+
+.btn-icon {
+  display: flex;
+  background: none;
+  color: var(--color-text--bold);
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.btn-icon:hover {
+  color: var(--color-primary);
+}
+
+.h-list > * {
+  margin: 0 calc(var(--gap) / 4);
+}
+
+.h-list:first-child {
+  margin-left: 0;
+}
+
+.h-list:last-child {
+  margin-right: 0;
+}
