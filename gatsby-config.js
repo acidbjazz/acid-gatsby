@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    site: `Acid Gatsby 0.7`,
+    site: `Acid Gatsby 0.7.2`,
     description: `gatsbyjs bootstrap`,
     author: `@acidbjazz`,
     url: `https://acid-gatsby.netlify.app/`,
@@ -20,10 +20,10 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Acid Gatsby`,
-        short_name: `Acid`,
+        short_name: `Acid 0.7.2`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#ff0000`,
+        theme_color: `#fffffff`,
         display: `standalone`,
         icon: `src/images/favicon.png`,
       },
@@ -56,7 +56,7 @@ module.exports = {
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`,
   ],
 }
 

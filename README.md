@@ -31,3 +31,4 @@
 ## v 0.7 (2021/01/04)
 
 - Fix dynamic config reducer bug, create pages functions, react-spring added, google-gtag plugin added
+- 0.7.2: test offline
