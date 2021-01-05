@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    site: `Acid Gatsby`,
-    description: `Acid Gatsby`,
+    site: `Acid Gatsby 0.7`,
+    description: `gatsbyjs bootstrap`,
     author: `@acidbjazz`,
     url: `https://acid-gatsby.netlify.app/`,
   },
@@ -14,17 +14,17 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    // `gatsby-transformer-sharp`,
+    // `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `acid-gatsby`,
-        short_name: `acid`,
+        name: `Acid Gatsby`,
+        short_name: `Acid`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#000000`,
-        display: `minimal-ui`,
+        theme_color: `#ff0000`,
+        display: `standalone`,
         icon: `src/images/favicon.png`,
       },
     },
