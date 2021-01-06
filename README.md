@@ -34,3 +34,4 @@
 - 0.7.2: test offline
 - 0.7.3: test layout
 - 0.7.4: test div wrap
+- 0.7.5: test remove config reducer
