@@ -13,7 +13,7 @@ const config = {
 const global = { config, menu, modal, alert }
 
 const reducer = (global, action) => ({
-  // config,
+  config,
   menu: menuReducer(global.menu, action),
   modal: modalReducer(global.modal, action),
   alert: alertReducer(global.alert, action),

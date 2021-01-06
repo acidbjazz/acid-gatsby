@@ -35,3 +35,5 @@
 - 0.7.3: test layout
 - 0.7.4: test div wrap
 - 0.7.5: test remove config reducer
+- 0.7.6: test remove portal div
+- 0.7.7: test add config reducer
