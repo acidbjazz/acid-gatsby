@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    site: `Acid Gatsby 0.7.5`,
+    site: `Acid Gatsby 0.7.6`,
     description: `gatsbyjs bootstrap`,
     author: `@acidbjazz`,
     url: `https://acid-gatsby.netlify.app/`,
@@ -19,7 +19,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `acid-gatsby.netlify.app 0.7.5`, // landing
+        name: `acid-gatsby.netlify.app 0.7.6`, // landing
         short_name: `Acid Gatsby`, // icon
         start_url: `/`,
         background_color: `#ffffff`,

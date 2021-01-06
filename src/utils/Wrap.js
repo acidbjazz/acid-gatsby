@@ -1,14 +1,14 @@
 import React, { useContext } from "react"
-import Alert from "../components/alert/Alert"
-import Modal from "../components/modal/Modal"
-import { Context } from "../utils/Context"
+// import Alert from "../components/alert/Alert"
+// import Modal from "../components/modal/Modal"
+// import { Context } from "../utils/Context"
 
 export default ({ children }) => {
-  const { state } = useContext(Context)
+  // const { state } = useContext(Context)
   return (
-    <div className="wrap">
+    <>
       {children}
-      <div className="portal">
+      {/* <div className="portal">
         {state.alert.isAlert && <Alert>{state.alert.alertText}</Alert>}
         <Modal>
           <p>
@@ -29,7 +29,7 @@ export default ({ children }) => {
             allowFullScreen
           ></iframe>
         </Modal>
-      </div>
-    </div>
+      </div> */}
+    </>
   )
 }
