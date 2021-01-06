@@ -32,3 +32,4 @@
 
 - Fix dynamic config reducer bug, create pages functions, react-spring added, google-gtag plugin added
 - 0.7.2: test offline
+- 0.7.3: test layout

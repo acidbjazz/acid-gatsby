@@ -19,11 +19,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Acid Gatsby`,
-        short_name: `Acid 0.7.2`,
+        name: `acid-gatsby.netlify.app 0.7.2`, // landing
+        short_name: `Acid Gatsby`, // icon
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#fffffff`,
+        theme_color: `#ffffff`,
         display: `standalone`,
         icon: `src/images/favicon.png`,
       },
