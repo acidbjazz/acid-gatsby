@@ -6,7 +6,7 @@ import { Context } from "../utils/Context"
 export default ({ children }) => {
   const { state } = useContext(Context)
   return (
-    <>
+    <div className="wrap">
       {children}
       <div className="portal">
         {state.alert.isAlert && <Alert>{state.alert.alertText}</Alert>}
@@ -30,6 +30,6 @@ export default ({ children }) => {
           ></iframe>
         </Modal>
       </div>
-    </>
+    </div>
   )
 }
