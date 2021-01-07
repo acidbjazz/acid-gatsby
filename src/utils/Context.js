@@ -10,10 +10,17 @@ const config = {
   breakpoint: 900,
 }
 
+const configReducer = (state, action) => {
+  switch (action.type) {
+    default:
+      return state
+  }
+}
+
 const global = { config, menu, modal, alert }
 
 const reducer = (global, action) => ({
-  config,
+  config: configReducer(global.config, action),
   menu: menuReducer(global.menu, action),
   modal: modalReducer(global.modal, action),
   alert: alertReducer(global.alert, action),

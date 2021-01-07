@@ -4,6 +4,7 @@ import React, { useContext } from "react"
 // import { Context } from "../utils/Context"
 
 export default ({ children }) => {
+  console.log(children)
   // const { state } = useContext(Context)
   return (
     <>

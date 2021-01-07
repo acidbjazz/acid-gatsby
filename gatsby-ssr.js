@@ -10,5 +10,6 @@ export const wrapRootElement = ({ element }) => {
 }
 
 export const wrapPageElement = ({ element, props }) => {
+  console.log("ssr:", element)
   return <Wrap {...props}>{element}</Wrap>
 }

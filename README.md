@@ -39,3 +39,4 @@
 - 0.7.7: test add config reducer
 - 0.7.8: test empty portals div
 - 0.7.9: test <> in layout
+- 0.7.10: test add config reducer + global.config + ssr log
