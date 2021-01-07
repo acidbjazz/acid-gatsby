@@ -8,6 +8,7 @@ export default ({ children }) => {
   return (
     <>
       {children}
+      <div className="portals">portals here</div>
       {/* <div className="portal">
         {state.alert.isAlert && <Alert>{state.alert.alertText}</Alert>}
         <Modal>
