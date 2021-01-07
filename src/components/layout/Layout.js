@@ -13,26 +13,29 @@ export default ({
   title = null,
   cover = null,
 }) => {
+  console.log("hi5 from layout ", type)
   return (
-    <div className={`layout ${type} ${className}`}>
-      <Seo slug={slug} title={title} cover={cover} />
-      {
+    <>
+      <div className={`layout ${type} ${className}`}>
+        <Seo slug={slug} title={title} cover={cover} />
         {
-          HMF: (
-            <>
-              <Header />
-              <Main children={children} />
-              <Footer />
-            </>
-          ),
-          HM: (
-            <>
-              <Header />
-              <Main children={children} />
-            </>
-          ),
-        }[type]
-      }
-    </div>
+          {
+            HMF: (
+              <>
+                <Header />
+                <Main children={children} />
+                <Footer />
+              </>
+            ),
+            HM: (
+              <>
+                <Header />
+                <Main children={children} />
+              </>
+            ),
+          }[type]
+        }
+      </div>
+    </>
   )
 }

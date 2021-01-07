@@ -38,3 +38,4 @@
 - 0.7.6: test remove portal div
 - 0.7.7: test add config reducer
 - 0.7.8: test empty portals div
+- 0.7.9: test <> in layout
