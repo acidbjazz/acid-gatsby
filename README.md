@@ -40,3 +40,4 @@
 - 0.7.8: test empty portals div
 - 0.7.9: test <> in layout
 - 0.7.10: test add config reducer + global.config + ssr log
+- 0.7.11: test remove offline plugin + test multiple portals

@@ -8,8 +8,11 @@ export default ({ children }) => {
   // const { state } = useContext(Context)
   return (
     <>
+      <div className="portal1">portal1 here</div>
+      <div className="portal2">portal2 here</div>
       {children}
-      <div className="portals">portals here</div>
+      <div className="portal3">portal3 here</div>
+      <div className="portal4">portal4 here</div>
       {/* <div className="portal">
         {state.alert.isAlert && <Alert>{state.alert.alertText}</Alert>}
         <Modal>
