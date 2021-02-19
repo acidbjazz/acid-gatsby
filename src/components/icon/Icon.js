@@ -1,12 +1,11 @@
 /**
- * @class SocialIcon
- * from https://simpleicons.org/
+ * @class Icon
+ * social icons from: from https://simpleicons.org/
  */
 
 import React from "react"
-import "./SocialIcon.css"
 
-export default ({ name, url = null, fx = null }) => {
+export default ({ name }) => {
   const icon = {
     facebook: (
       <svg viewBox="0 0 24 24">
@@ -49,15 +48,5 @@ export default ({ name, url = null, fx = null }) => {
       </svg>
     ),
   }[name]
-  return url ? (
-    <a className="social-icon--link" href={url}>
-      <span className="social-icon">{icon}</span>
-    </a>
-  ) : fx ? (
-    <button onClick={fx} className="social-icon--button">
-      <span className="social-icon">{icon}</span>
-    </button>
-  ) : (
-    <span className="social-icon">{icon}</span>
-  )
+  return <span className="icon">{icon}</span>
 }

@@ -1,0 +1,17 @@
+.home {
+}
+
+.home-hero {
+  margin-bottom: var(--gap);
+}
+
+.home-video {
+  object-fit: cover;
+  height: 100%;
+  filter: opacity(0.75);
+}
+
+/* responsive */
+
+@media (max-width: 900px) {
+}

@@ -1,48 +1,38 @@
-/**
- * @class Brand
- * This class define the multiples assets for logo
- *
- * @option type: String = undefined ("logo", "iso")
- * @option filetype: String = undefined ("svg", "img", "html")
- * @option isLink: Boolean = undefined
- */
-
 import React from "react"
 import { Link } from "gatsby"
 import LogoSVG from "../../images/logo.svg"
 import IsoSVG from "../../images/logo.svg"
 import LogoIMG from "../../images/logo.png"
 import IsoIMG from "../../images/logo.png"
-import "./Brand.css"
+import css from "./Brand.module.css"
 
-export default ({ type, filetype, isLink }) => {
+export default ({ className = null, type, filetype, isLink }) => {
+  const _className = className ? ` ${className}` : ""
   const brand = {
     svg:
       type === "logo" ? (
-        <LogoSVG className="logo-svg" />
+        <LogoSVG className={css.logoSVG} />
       ) : (
-        <IsoSVG className="iso-svg" />
+        <IsoSVG className={css.isoSVG} />
       ),
     img:
       type === "logo" ? (
-        <img className="logo-img" src={LogoIMG} alt="logo" />
+        <img className={css.logoIMG} src={LogoIMG} alt="logo" />
       ) : (
-        <img className="iso-img" src={IsoIMG} alt="iso" />
+        <img className={css.isoIMG} src={IsoIMG} alt="iso" />
       ),
     html:
       type === "logo" ? (
-        <div className="logo-html">
-          <div className="logo-html-text">logo</div>
-        </div>
+        <div className={css.logoHTML}>logo</div>
       ) : (
-        <div className="iso-text">logo</div>
+        <div className={css.isoHTML}>iso</div>
       ),
   }[filetype]
   return isLink ? (
-    <Link className="brand" to="/">
+    <Link className={`${css.brand}${_className}`} to="/">
       {brand}
     </Link>
   ) : (
-    <div className="brand">{brand}</div>
+    <div className={`${css.brand}${_className}`}>{brand}</div>
   )
 }

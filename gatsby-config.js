@@ -1,9 +1,12 @@
+const project = `Acid Gatsby`
+const version = `0.9`
+
 module.exports = {
   siteMetadata: {
-    site: `Acid Gatsby 0.7.11`,
+    site: `${project}`,
     description: `gatsbyjs bootstrap`,
     author: `@acidbjazz`,
-    url: `https://acid-gatsby.netlify.app/`,
+    url: `https://acid-gatsby.netlify.app`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -19,8 +22,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `acid-gatsby.netlify.app 0.7.11`, // landing
-        short_name: `Acid Gatsby`, // icon
+        name: `${project} ${version}`, // landing
+        short_name: `${project}`, // icon
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#ffffff`,

@@ -1,71 +1,80 @@
+/* ICONS */
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons&display=block");
+
+/* SANS */
 @import url("https://fonts.googleapis.com/css2?family=Bitter:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
+/* SERIF */
 @import url("https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap");
+
+/* MONO */
 
 :root {
   /* COLORS */
-
   --color-gray--light: #eeeeee;
   --color-gray: #8d8d8d;
   --color-gray--dark: #4d4d4d;
-
-  --color-white--alpha: rgba(255, 255, 255, 0.25);
+  --color-white--alpha: rgba(255, 255, 255, 0.75);
   --color-black--alpha: rgba(0, 0, 0, 0.25);
-  --color-red--alpha: rgba(255, 0, 0, 0.05);
-  --color-green--alpha: rgba(0, 255, 0, 0.25);
-  --color-blue--alpha: rgba(0, 0, 255, 0.25);
-  --color-yellow--alpha: rgba(255, 255, 0, 0.25);
-
   --color-primary: black;
-  --color-secondary: #ffaa96;
+  --color-secondary: #fc0037;
   --color-background: white;
-  --color-text: var(--color-gray--dark);
+  --color-text: var(--color-gray);
+  --color-menu: var(--color-gray--dark);
 
   /* MEASURES */
-
+  --gap0125: calc(var(--gap) * 0.125);
   --gap025: calc(var(--gap) * 0.25);
   --gap05: calc(var(--gap) * 0.5);
   --gap: 2rem;
+  --gap15: calc(var(--gap) * 1.5);
   --gap2: calc(var(--gap) * 2);
+  --gap3: calc(var(--gap) * 3);
   --gap4: calc(var(--gap) * 4);
+
   --page-width: 1200px;
-  --menu-height: 100px;
+
+  --logo-height: 4rem;
+  --header-height: 8rem;
+
   --hero-height: 50vh;
-  /* --page-columns: 3; */
-  /* --column-width: 100% / var(--page-columns); */
-  /* --border-radius: 4px; */
+  --border-radius: 4px;
 
   /* FONTS */
-
   --font-logo: "Bitter";
   --font-primary: "Bitter";
+  --font-ui: "Open-Sans", sans-serif;
   --font-text: "Roboto Slab", sans-serif;
 
-  --font-size--logo: 160px;
-  --font-size--h1: 80px;
-  --font-size--h2: 32px;
-  --font-size--h3: 24px;
-  --font-size--paragraph: 20px;
-  --font-size--details: 16px;
-  --font-size--tiny: 14px;
+  --font-size--xl: 52px;
+  --font-size--l: 26px;
+  --font-size--h1: 16px;
+  --font-size--h2: 14px;
+  --font-size--h3: 13px;
+  --font-size--menu: 13px;
+  --font-size--submenu: 11px;
+  --font-size--buttons: 14px;
+  --font-size--paragraph: 13px;
+  --font-size--details: 12px;
+  --font-size--tiny: 11px;
+
+  /* LETTER-SPACING */
+  --letter-spacing: 0.2em;
 
   /* Z-INDEX */
-
   --z--hero: 10;
   --z--header: 20;
+  --z--menu: 21;
   --z--modal: 30;
-  --z--menu: 40;
-  --z--alert: 50;
+  --z--alert: 40;
 
   /* BREAKPOINTS */
-
   --bp-phone-tablet: 600px;
   --bp-tablet-desktop: 900px;
   --bp-desktop-hd: 1200px;
   --bp-hd-fullhd: 1800px;
 
   /* TIMES */
-
   --t-xl: 1600ms;
   --t-l: 800ms;
   --t-m: 400ms;
@@ -73,65 +82,45 @@
   --t-xs: 100ms;
 
   /* SHADOWS */
-
   --sh-z1: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   --sh-z2: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   --sh-z3: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   --sh-z4: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   --sh-z5: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
-
   --shadow: var(--sh-z3);
 
   /* EASES */
-
   --easeOutExpo: cubic-bezier(0.19, 1, 0.22, 1);
   --easeInExpo: cubic-bezier(0.95, 0.05, 0.795, 0.035);
-
   --ease: var(--easeOutExpo);
 
-  /* TRANSITION */
+  /* SCALE */
+  --scale: scale(1.01);
 
+  /* TRANSITION */
   --transition: all var(--t-m) var(--ease);
 }
 
 /* responsive */
 
-@media (max-width: 1200px) {
-  :root {
-    --font-size--logo: 13.5vw;
-    --font-size--h1: 70px;
-    --font-size--h2: 28px;
-    --font-size--h3: 22px;
-    --font-size--paragraph: 18px;
-    --font-size--details: 15px;
-    --font-size--tiny: 13px;
-
-    --gap: 1.75rem;
-  }
-}
-
 @media (max-width: 900px) {
   :root {
-    --font-size--h1: 60px;
-    --font-size--h2: 24px;
-    --font-size--h3: 20px;
-    --font-size--paragraph: 16px;
-    --font-size--details: 14px;
-    --font-size--tiny: 12px;
+    /* MEASURES */
+    --gap: 1rem;
+    --logo-height: 4rem;
+    --header-height: 6rem;
 
-    --gap: 1.5rem;
-  }
-}
-
-@media (max-width: 600px) {
-  :root {
-    --font-size--h1: 40px;
-    --font-size--h2: 20px;
-    --font-size--h3: 18px;
-    --font-size--paragraph: 14px;
+    /* FONTS */
+    --font-size--xl: 52px;
+    --font-size--l: 26px;
+    --font-size--h1: 16px;
+    --font-size--h2: 14px;
+    --font-size--h3: 13px;
+    --font-size--menu: 13px;
+    --font-size--submenu: 11px;
+    --font-size--buttons: 14px;
+    --font-size--paragraph: 13px;
     --font-size--details: 12px;
-    --font-size--tiny: 10px;
-
-    --gap: 1.25rem;
+    --font-size--tiny: 11px;
   }
 }

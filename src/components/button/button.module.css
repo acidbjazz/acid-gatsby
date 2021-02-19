@@ -1,21 +1,77 @@
 .btn {
-  background: var(--color-secondary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  padding: 0 var(--gap05);
+  font-family: var(--font-ui);
+  font-size: var(--font-size--buttons);
+  text-transform: uppercase;
   color: white;
-  padding: 0.5rem 0.5rem;
-  font-size: var(--font-size--tiny);
+  fill: white;
+  background: var(--color-primary);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: var(--transition);
+  vertical-align: middle;
 }
 
 .btn:hover {
-  cursor: pointer;
+  background-color: var(--color-secondary);
+}
+
+.icon {
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+  margin-left: -4px;
+}
+
+.btn-icon {
+  width: 36px;
+  padding: 0;
+}
+
+.btn-icon .icon {
+  margin-right: 0;
+  margin-left: 0;
 }
 
 .block {
+  display: flex !important;
   width: 100%;
-  padding: 1rem 0.5rem;
 }
 
 .outline {
-  background: white;
+  background: transparent;
+  color: var(--color-primary);
+  fill: var(--color-primary);
+  border: 1px solid var(--color-primary);
+}
+
+.outline:hover {
+  background: transparent;
   color: var(--color-secondary);
+  fill: var(--color-secondary);
   border: 1px solid var(--color-secondary);
+}
+
+.no-BG {
+  background: transparent;
+  color: var(--color-primary);
+  fill: var(--color-primary);
+}
+
+.no-BG:hover {
+  background: transparent;
+  color: var(--color-secondary);
+  fill: var(--color-secondary);
+}
+
+/* Button Link */
+
+.btn-link {
+  composes: btn;
+  text-decoration: none;
 }

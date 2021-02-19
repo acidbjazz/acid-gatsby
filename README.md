@@ -41,3 +41,16 @@
 - 0.7.9: test <> in layout
 - 0.7.10: test add config reducer + global.config + ssr log
 - 0.7.11: test remove offline plugin + test multiple portals
+
+## v 0.8 (2021/01/07)
+
+- update vars + normalizer
+- fix menu
+
+## v 0.9 (2021/02/19)
+
+- Total CSS modules!
+- Fixed blog, blogPost, pagination, seo, menu.
+- Added grid, card, date.
+- Update gatsby-node.
+- Added folder "test" with proposed components

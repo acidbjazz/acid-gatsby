@@ -1,26 +1,28 @@
 const path = require(`path`)
 const fetch = require(`node-fetch`)
 
-const page = (createPage, url, template, context = null) => {
+const page = (createPage, url, template, data = null) => {
   createPage({
     path: url,
     component: path.resolve(template),
-    context
+    context: { url, data },
   })
 }
 
 const pages = (createPage, nodes, url, template) => {
   nodes.forEach((item, i) => {
     createPage({
-      path: `${url}${item.slug}`,
+      path: `${url}/${item.slug}`,
       component: path.resolve(template),
       context: {
+        url,
         node: item,
-        current: i + 1,
-        total: nodes.length,
-        prev: i === 0 ? null : `${url}${nodes[i - 1].slug}`,
-        next:
-          i === nodes.length - 1 ? null : `${url}${nodes[i + 1].slug}`,
+        pagination: {
+          current: i + 1,
+          total: nodes.length,
+          prev: i === 0 ? null : `${url}/${nodes[i - 1].slug}`,
+          next: i === nodes.length - 1 ? null : `${url}/${nodes[i + 1].slug}`,
+        },
       },
     })
   })
@@ -33,14 +35,17 @@ const pagination = (createPage, ppp, nodes, url, template) => {
     const limit = skip + ppp
     const nodesPerPage = nodes.slice(skip, limit)
     createPage({
-      path: i === 0 ? url : `${url}${i + 1}`,
+      path: i === 0 ? url : `${url}/${i + 1}`,
       component: path.resolve(template),
       context: {
+        url,
         nodes: nodesPerPage,
-        current: i + 1,
-        total: totalNodes,
-        prev: i === 0 ? null : i === 1 ? url : `${url}${i}`,
-        next: i === totalNodes - 1 ? null : `${url}${i + 2}`,
+        pagination: {
+          current: i + 1,
+          total: totalNodes,
+          prev: i === 0 ? null : i === 1 ? url : `${url}/${i}`,
+          next: i === totalNodes - 1 ? null : `${url}/${i + 2}`,
+        },
       },
     })
   }
@@ -81,13 +86,12 @@ const aboutQuery = `
   }
 `
 
-const appEndpoint = `https://covid-api.com/api/reports?iso=PER`
+const appEndpoint = `https://raw.githubusercontent.com/aniversarioperu/efemerides-bot/master/efemerides_bot/data.json`
 
 const arrQuerys = [articleQuery, aboutQuery]
 const arrEndpoints = [appEndpoint]
 
 exports.createPages = async ({ graphql, actions: { createPage } }) => {
-
   const arrResultQuerys = arrQuerys.map(query => graphql(query))
   const arrResultEndpoints = arrEndpoints.map(endpoint =>
     fetch(endpoint).then(response => response.json())
@@ -103,10 +107,10 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
     video: about.video,
     lastArticle: articles[0],
   })
-  page(createPage, `/about`, `./src/templates/about/About.js`, {about})
-  pages(createPage, articles, `/blog/`, `./src/templates/blog/BlogPost.js`)
-  pagination(createPage, 12, articles, `/blog/`, `./src/templates/blog/Blog.js`)
-  page(createPage, `/app`, `./src/templates/app/App.js`, {appdata})
+  page(createPage, `/about`, `./src/templates/about/About.js`, { about })
+  pages(createPage, articles, `/blog`, `./src/templates/blog/BlogPost.js`)
+  pagination(createPage, 6, articles, `/blog`, `./src/templates/blog/Blog.js`)
+  page(createPage, `/app`, `./src/templates/app/App.js`, { appdata })
   page(createPage, `/404`, `./src/templates/404/404.js`)
 }
 

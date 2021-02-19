@@ -1,0 +1,14 @@
+.pagination {
+  text-align: center;
+  margin-top: var(--gap);
+}
+
+.prev {
+}
+
+.home {
+  margin: 0 var(--gap025);
+}
+
+.next {
+}

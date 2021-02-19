@@ -1,0 +1,34 @@
+.footer {
+  background: var(--color-primary);
+  font-family: var(--font-ui);
+}
+
+.footer-content {
+  color: white;
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: var(--gap);
+}
+
+.footer-brand {
+  margin-bottom: var(--gap);
+  fill: white;
+}
+
+.footer-brand svg {
+  height: 32px;
+  width: 32px;
+}
+
+.footer-social {
+  margin-bottom: var(--gap);
+}
+
+.copy {
+  font-size: var(--font-size--tiny);
+}
+
+/* responsive */
+
+@media (max-width: 900px) {
+}

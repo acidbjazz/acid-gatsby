@@ -1,0 +1,28 @@
+a.brand {
+  text-decoration: none;
+}
+
+.brand {
+  display: inline-flex;
+}
+
+.logo-SVG,
+.iso-SVG {
+  height: var(--logo-height);
+  width: 64px;
+}
+
+.logo-IMG,
+.iso-IMG {
+  height: var(--logo-height);
+  width: 64px;
+}
+
+.logo-HTML,
+.iso-HTML {
+  font-size: var(--font-size--logo);
+  font-family: var(--font-logo);
+  color: var(--color-primary);
+}
+
+/* responsive */

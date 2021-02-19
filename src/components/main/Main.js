@@ -1,8 +1,8 @@
 import React from "react"
-import "./Main.css"
+import css from "./Main.module.css"
 
 export default ({ children }) => (
-  <main className="main">
-    <div className="main-content">{children}</div>
+  <main className={css.main}>
+    <div className={css.mainContent}>{children}</div>
   </main>
 )

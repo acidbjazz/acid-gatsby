@@ -1,17 +1,16 @@
 .main {
   flex-grow: 1;
+  width: 100%;
+  margin-top: var(--header-height);
 }
 
 .main-content {
-  margin: 0 auto var(--gap4);
   max-width: var(--page-width);
-  padding: 0 var(--gap2);
+  margin: 0 auto;
+  padding: 0 var(--gap) var(--gap);
 }
 
 /* responsive */
 
 @media (max-width: 900px) {
-  .main {
-    margin-top: var(--menu-height);
-  }
 }

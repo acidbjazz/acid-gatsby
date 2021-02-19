@@ -1,7 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { Helmet } from "react-helmet"
-import Cover from "../../images/cover.jpg"
+import Cover from "../images/cover.jpg"
 
 export default ({ title = null, slug = null, cover = null }) => {
   const seoQuery = useStaticQuery(

@@ -1,33 +1,25 @@
 import React from "react"
-import { Link } from "gatsby"
 import Layout from "../../components/layout/Layout"
+import Grid from "../../components/grid/Grid"
+import Card from "../../components/card/Card"
+import Date from "../../components/date/Date"
 import Pagination from "../../components/pagination/Pagination"
-import { useDate } from "../../utils/Hooks"
-import "./Blog.css"
+import css from "./Blog.module.css"
 
-export default ({ pageContext }) => {
-  const { nodes, current, total, prev, next } = pageContext
+export default ({ pageContext: { url, nodes, pagination } }) => {
   return (
-    <Layout type="HMF" className="blog" slug="/blog" title="Blog">
+    <Layout type="HMF" className={css.blog} slug={url} title="Blog">
       <h1>BLOG</h1>
-      <div className="cards">
+      <Grid>
         {nodes.map((item, i) => (
-          <Link className="card" to={`/blog/${item.slug}`} key={i}>
-            <h1 className="title">{item.titulo}</h1>
-            <time>{useDate(item.fecha)}</time>
-            <div className="excerpt">
-              {item.texto.childMarkdownRemark.excerpt}
-            </div>
-          </Link>
+          <Card url={`${url}/${item.slug}`} key={i}>
+            <h2>{item.titulo}</h2>
+            <Date date={item.fecha} />
+            <div>{item.texto.childMarkdownRemark.excerpt}</div>
+          </Card>
         ))}
-        <Pagination
-          current={current}
-          total={total}
-          prev={prev}
-          next={next}
-          home="/"
-        />
-      </div>
+      </Grid>
+      <Pagination url={url} pagination={pagination} />
     </Layout>
   )
 }

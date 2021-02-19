@@ -1,29 +1,17 @@
-import React, { useContext, useEffect } from "react"
-import { Context } from "../../utils/Context"
+import React from "react"
 import Layout from "../../components/layout/Layout"
-import { alertText } from "../../components/alert/Alert"
-// import "./About.css"
+import Markdown from "../../components/markdown/Markdown"
+import css from "./About.module.css"
 
-export default ({ pageContext }) => {
-  const video = pageContext.about.video.file.url
-  const texto = pageContext.about.texto.childMarkdownRemark.html
-  const { dispatch } = useContext(Context)
-  useEffect(() => {
-    dispatch(alertText("Cambió la alerta"))
-  }, []) // eslint-disable-line react-hooks/exhaustive-deps
-
+export default ({ pageContext: { url, data } }) => {
   return (
-    <Layout type="HMF" className="about" slug="/about" title="About">
-      <div className="welcome">
+    <Layout type="HMF" className={css.about} slug={url} title="About">
+      <div>
         <h1>About</h1>
-        <div
-          dangerouslySetInnerHTML={{
-            __html: texto,
-          }}
-        />
+        <Markdown>{data.about.texto.childMarkdownRemark.html}</Markdown>
         {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
         <video className="video adjust" preload="auto" controls>
-          <source src={video} type="video/mp4" />
+          <source src={data.about.video.file.url} type="video/mp4" />
         </video>
       </div>
     </Layout>

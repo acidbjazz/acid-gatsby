@@ -2,24 +2,22 @@ import React from "react"
 import { Link } from "gatsby"
 import Layout from "../../components/layout/Layout"
 import Hero from "../../components/hero/Hero"
-// import "./Home.css"
+import Markdown from "../../components/markdown/Markdown"
+import css from "./Home.module.css"
 
-export default ({ pageContext }) => {
-  const video = pageContext.video.file.url
-  const titulo = pageContext.lastArticle.titulo
-  const texto = pageContext.lastArticle.texto.childMarkdownRemark.html
-  const slug = pageContext.lastArticle.slug
+export default ({ pageContext: { url, data } }) => {
+  console.log("data:", data)
   return (
-    <Layout type="HMF" className="home">
-      <Hero className="" video={video} />
-      <div className="welcome container tight">
-        <h1>{titulo}</h1>
-        <div
-          dangerouslySetInnerHTML={{
-            __html: texto,
-          }}
-        />
-        <Link to={`/blog/${slug}`}>Leer más ...</Link>
+    <Layout type="HMF" className={css.home}>
+      <Hero className={css.homeHero}>
+        <video className={css.homeVideo} preload="auto" autoPlay muted loop>
+          <source src={data.video.file.url} type="video/mp4" />
+        </video>
+      </Hero>
+      <div>
+        <h1>{data.lastArticle.titulo}</h1>
+        <Markdown>{data.lastArticle.texto.childMarkdownRemark.html}</Markdown>
+        <Link to={`/blog/${data.lastArticle.slug}`}>Leer más ...</Link>
       </div>
     </Layout>
   )

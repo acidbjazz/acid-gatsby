@@ -1,0 +1,8 @@
+.card {
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+.card:hover h2 {
+  text-decoration: underline;
+}

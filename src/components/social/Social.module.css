@@ -1,0 +1,25 @@
+.social {
+}
+
+.social > * {
+  margin: 0 var(--gap025);
+}
+
+.social > *:first-child {
+  margin-left: 0;
+}
+
+.social > *:last-child {
+  margin-right: 0;
+}
+
+.social-icon {
+  width: 18px;
+  height: 18px;
+  fill: white;
+}
+
+/* responsive */
+
+@media (max-width: 900px) {
+}

@@ -1,0 +1,21 @@
+.header {
+  position: fixed;
+  width: 100%;
+  height: var(--header-height);
+  z-index: var(--z--header);
+  background: var(--color-background);
+  display: flex;
+  align-items: center;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 0 var(--gap);
+}
+
+/* responsive */

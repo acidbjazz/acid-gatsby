@@ -1,67 +1,63 @@
 import React, { useContext } from "react"
 import { Link } from "gatsby"
 import { Context } from "../../utils/Context"
-import { modalShow, modalHide } from "../modal/Modal"
-import "./Menu.css"
+import { menuToggle } from "./Actions"
+import ButtonToggle from "../../components/button/ButtonToggle"
+import ButtonLink from "../../components/button/ButtonLink"
+import css from "./Menu.module.css"
 
-const Menu = () => {
+export default () => {
   const { state, dispatch } = useContext(Context)
   return (
-    <div className="menu">
-      <button
-        className="toggle-menu btn-icon"
-        onClick={() => dispatch(menuToggle())}
-      >
-        <i className="material-icons icon-menu">menu</i>
-        <i className="material-icons icon-close">close</i>
-      </button>
-      <nav className="nav-pages h-list">
-        <button
-          onClick={() => {
-            state.modal.isModal ? dispatch(modalHide()) : dispatch(modalShow())
-          }}
+    <div className={`${css.menu} ${state.menu.isMenuOpen ? css.isOpen : ""}`}>
+      <ButtonToggle
+        className={css.burguer}
+        icons={{ on: "close", off: "menu" }}
+        noBG
+        fx={active => {
+          dispatch(menuToggle(active))
+        }}
+        init={state.menu.isMenuOpen}
+      ></ButtonToggle>
+      <nav className={css.navPages}>
+        <Link
+          to="/"
+          className={css.navItem}
+          activeClassName={css.active}
+          onClick={() => dispatch(menuToggle(false))}
         >
-          Toggle Modal
-        </button>
-        <Link to="/" className="nav-item" activeClassName="active">
           Home
         </Link>
-        <Link to="/about" className="nav-item" activeClassName="active">
+        <Link
+          to="/about"
+          className={css.navItem}
+          activeClassName={css.active}
+          onClick={() => dispatch(menuToggle(false))}
+        >
           About
         </Link>
         <Link
           to="/blog"
-          className="nav-item"
+          className={css.navItem}
           getProps={({ isPartiallyCurrent }) =>
-            isPartiallyCurrent ? { className: "nav-item active" } : null
+            isPartiallyCurrent
+              ? { className: `${css.navItem} ${css.active}` }
+              : null
           }
+          onClick={() => dispatch(menuToggle(false))}
         >
           Blog
         </Link>
-        <Link to="/app" className="nav-item" activeClassName="active">
+        <ButtonLink
+          className={css.appButton}
+          icon="table_view"
+          url="/app"
+          activeClassName={css.active}
+          fx={() => dispatch(menuToggle(false))}
+        >
           App
-        </Link>
+        </ButtonLink>
       </nav>
     </div>
   )
 }
-
-const menu = {
-  isMenuOpen: false,
-}
-
-const menuReducer = (state, action) => {
-  switch (action.type) {
-    case "MENU_TOGGLE": {
-      return { ...state, isMenuOpen: !state.isMenuOpen }
-    }
-    default:
-      return state
-  }
-}
-
-const menuToggle = () => ({
-  type: "MENU_TOGGLE",
-})
-
-export { Menu as default, menu, menuReducer, menuToggle }
