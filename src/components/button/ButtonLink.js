@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import css from "./button.module.css"
+import css from "./Button.module.css"
 
 export default ({
   children,
