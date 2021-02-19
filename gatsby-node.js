@@ -2,26 +2,28 @@ const path = require(`path`)
 const fetch = require(`node-fetch`)
 
 const page = (createPage, url, template, data = null) => {
+  const _url = url === "/" ? "" : url
   createPage({
     path: url,
     component: path.resolve(template),
-    context: { url, data },
+    context: { url: _url, data },
   })
 }
 
 const pages = (createPage, nodes, url, template) => {
+  const _url = url === "/" ? "" : url
   nodes.forEach((item, i) => {
     createPage({
-      path: `${url}/${item.slug}`,
+      path: `${_url}/${item.slug}`,
       component: path.resolve(template),
       context: {
-        url,
+        url: _url,
         node: item,
         pagination: {
           current: i + 1,
           total: nodes.length,
-          prev: i === 0 ? null : `${url}/${nodes[i - 1].slug}`,
-          next: i === nodes.length - 1 ? null : `${url}/${nodes[i + 1].slug}`,
+          prev: i === 0 ? null : `${_url}/${nodes[i - 1].slug}`,
+          next: i === nodes.length - 1 ? null : `${_url}/${nodes[i + 1].slug}`,
         },
       },
     })
@@ -29,22 +31,23 @@ const pages = (createPage, nodes, url, template) => {
 }
 
 const pagination = (createPage, ppp, nodes, url, template) => {
+  const _url = url === "/" ? "" : url
   const totalNodes = Math.ceil(nodes.length / ppp)
   for (let i = 0; i < totalNodes; i++) {
     const skip = i * ppp
     const limit = skip + ppp
     const nodesPerPage = nodes.slice(skip, limit)
     createPage({
-      path: i === 0 ? url : `${url}/${i + 1}`,
+      path: i === 0 ? url : `${_url}/${i + 1}`,
       component: path.resolve(template),
       context: {
-        url,
+        url: _url,
         nodes: nodesPerPage,
         pagination: {
           current: i + 1,
           total: totalNodes,
-          prev: i === 0 ? null : i === 1 ? url : `${url}/${i}`,
-          next: i === totalNodes - 1 ? null : `${url}/${i + 2}`,
+          prev: i === 0 ? null : i === 1 ? _url : `${_url}/${i}`,
+          next: i === totalNodes - 1 ? null : `${_url}/${i + 2}`,
         },
       },
     })

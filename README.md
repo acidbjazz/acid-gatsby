@@ -54,3 +54,7 @@
 - Added grid, card, date.
 - Update gatsby-node.
 - Added folder "test" with proposed components
+
+## v 0.10 (2021/02/19) -----> falta subir
+
+- Update gatsby-node: home urls "/"
