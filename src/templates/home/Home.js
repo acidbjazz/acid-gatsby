@@ -6,7 +6,6 @@ import Markdown from "../../components/markdown/Markdown"
 import css from "./Home.module.css"
 
 export default ({ pageContext: { url, data } }) => {
-  console.log("data:", data)
   return (
     <Layout type="HMF" className={css.home}>
       <Hero className={css.homeHero}>
