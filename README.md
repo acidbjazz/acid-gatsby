@@ -55,7 +55,7 @@
 - Update gatsby-node.
 - Added folder "test" with proposed components
 
-## v 0.10 (2021/02/19) -----> falta subir
+## v 0.10 (2021/02/22)
 
 - Update gatsby-node: home urls "/"
 - fixed: - Bug <Markdown> space in classnames
