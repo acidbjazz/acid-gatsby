@@ -5,7 +5,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Bitter:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
 /* SERIF */
-@import url("https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap");
+/* MONO */
+@import url("https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap");
 
 /* MONO */
 
@@ -46,17 +49,18 @@
   --font-ui: "Open-Sans", sans-serif;
   --font-text: "Roboto Slab", sans-serif;
 
-  --font-size--xl: 52px;
-  --font-size--l: 26px;
-  --font-size--h1: 16px;
-  --font-size--h2: 14px;
-  --font-size--h3: 13px;
-  --font-size--menu: 13px;
-  --font-size--submenu: 11px;
-  --font-size--buttons: 14px;
-  --font-size--paragraph: 13px;
-  --font-size--details: 12px;
-  --font-size--tiny: 11px;
+  --font-size--logo: 32px;
+  --font-size--xl: 16px;
+  --font-size--l: 16px;
+  --font-size--h1: 64px;
+  --font-size--h2: 24px;
+  --font-size--h3: 20px;
+  --font-size--menu: 16px;
+  --font-size--submenu: 16px;
+  --font-size--buttons: 16px;
+  --font-size--paragraph: 16px;
+  --font-size--details: 14px;
+  --font-size--tiny: 12px;
 
   /* LETTER-SPACING */
   --letter-spacing: 0.2em;
@@ -106,21 +110,22 @@
 @media (max-width: 900px) {
   :root {
     /* MEASURES */
-    --gap: 1rem;
+    --gap: 1.5rem;
     --logo-height: 4rem;
     --header-height: 6rem;
 
     /* FONTS */
-    --font-size--xl: 52px;
-    --font-size--l: 26px;
-    --font-size--h1: 16px;
-    --font-size--h2: 14px;
-    --font-size--h3: 13px;
-    --font-size--menu: 13px;
-    --font-size--submenu: 11px;
-    --font-size--buttons: 14px;
-    --font-size--paragraph: 13px;
+    --font-size--logo: 24px;
+    --font-size--xl: 16px;
+    --font-size--l: 16px;
+    --font-size--h1: 40px;
+    --font-size--h2: 20px;
+    --font-size--h3: 16px;
+    --font-size--menu: 16px;
+    --font-size--submenu: 16px;
+    --font-size--buttons: 16px;
+    --font-size--paragraph: 14px;
     --font-size--details: 12px;
-    --font-size--tiny: 11px;
+    --font-size--tiny: 10px;
   }
 }

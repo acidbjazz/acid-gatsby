@@ -1,17 +1,14 @@
-import React, { useContext } from "react"
-import { Context } from "../../utils/Context"
+import React from "react"
 import { useExtractDomain } from "../../utils/Hooks"
 import SocialIcon from "../icon/SocialIcon"
 import css from "./Social.module.css"
 
-export default ({ className = null }) => {
-  const { state } = useContext(Context)
-  const social = state.config.social
+export default ({ className = null, data = null }) => {
   const _className = className ? ` ${className}` : ""
   return (
     <div className={`${css.social}${_className}`}>
-      {social ? (
-        social.nodes.map((item, i) => {
+      {data ? (
+        data.nodes.map((item, i) => {
           const domain = useExtractDomain(item.url)
           return (
             <SocialIcon

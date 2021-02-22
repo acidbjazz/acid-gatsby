@@ -58,3 +58,24 @@
 ## v 0.10 (2021/02/19) -----> falta subir
 
 - Update gatsby-node: home urls "/"
+- fixed: - Bug <Markdown> space in classnames
+- fixed: Add mono font to vars
+- fixed: Add --font-size--logo var
+
+## issues: (with laoruga.pe)
+
+- Bug <Pagination> "/" error home button
+- Update <Card> without link
+- Update <Social> with data source prop
+
+## next!
+
+- audio player component (laoruga.pe)
+- gatsbyjs -> nextjs (noticiasser.pe)
+- netlify -> vercel (noticiasser.pe)
+- video player component
+- carousel component
+- typescript
+- strapi
+- firebase
+- aws

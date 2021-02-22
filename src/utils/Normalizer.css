@@ -69,6 +69,7 @@ a {
   -webkit-text-decoration-skip: objects; /* Remove gaps in links underline in iOS 8+ and Safari 8+. */
 }
 
+p a,
 table a {
   word-break: break-word;
   color: var(--color-text);

@@ -1,5 +1,5 @@
 const project = `Acid Gatsby`
-const version = `0.9`
+const version = `0.10`
 
 module.exports = {
   siteMetadata: {
